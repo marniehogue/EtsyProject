@@ -13,11 +13,21 @@
     td.caption { 
       text-align: center;
     }
+    img.aligned {
+      display: block;
+      margin: auto;
+    }
+    p.equation {
+      color:blue;
+    }
     a {
       color: white;
     }
     a.styled {
       color:black;
+    }
+    table.image {
+      display: inline-block;
     }
     h1 {
       font-size: 50px;
@@ -68,16 +78,15 @@
     <h2> A Study of the Seller Community at Etsy</h2>
     <ul class="styled-list">
       <li><a href="https://datatodesign.wordpress.com/about/">About Me</a></li>
-      <li><a href="DataAnalysisforGrwoth_Final.pdf">Sample Data Analysis</a></li>
       <li><a href="https://datatodesign.wordpress.com/">Blog</a></li>
     </ul>
   </header>
     <nav>
-    <p> Growing and better connecting the seller and buyer communities is critical to the success of the Etsy marketplace. In this study, I focus specifically on the sellers – their characteristics, behaviors and experiences - in order to form strategies that will enhance the success of their shops and better connect them with customers.  This study represents an outline for analysis of seller data. <br/>(I would love the opportunity to carry out this analysis on real data!) </p>
+    <p> Growing and better connecting the seller and buyer communities is critical to the success of the Etsy marketplace. In this study, I focus specifically on the sellers – their characteristics, behaviors and experiences - in order to form strategies that will enhance the success of their shops and better connect them with customers.  This study represents an outline for my analysis. <br/>(I would love the opportunity to carry out this analysis on real data!) </p>
     </nav>
     <article>
     <h2 class="styled">Step 1: Lay the Foundation <br/> (Study Sellers and Their Shops)</h2>
-    <p>Objective: Study sellers, their shops and general trends in order to have a foundation in which to form deeper analysis. Below I've outlined three areas of study - seller characterstics, engagement, and sales and satisfaction, with associated metrics for each. (Note that "time period" can mean weekly, monthly, quarterly, or annually depending on metric).</p>
+    <p>Objective: Study sellers, their shops and general product trends in order to build a foundation in which to form deeper analysis. Below I've outlined three areas of study - seller characterstics, engagement, and sales and satisfaction, with associated metrics for each. (Note that "time period" can mean weekly, monthly, quarterly, or annually depending on metric).</p>
     <h3>Characteristic Trends</h3>
     <ul>
       <li>Total sellers/time period</li>
@@ -112,22 +121,23 @@
       <li>Distribution of shop ratings/product category</li>
       <li>Distribution of average # of "Favorites" per product/shop/product category</li>
       <li>Distribution of # reviews/shop/product category</li>
-      <li>Distribution of "support touches" from sellers/time period</li>
-      <li>Etsy Seller Newsletter subscriptions/time period</li>
+      <li>Distribution of # "support touches" from sellers/time period</li>
+      <li>Etsy Seller Success Newsletter subscriptions/time period</li>
     </ul>
     <table class="image">
       <tr><td><img src="http://i.imgur.com/CPimsQZ.png" title="Revenue Per Product Category" style="width:250px;height:200px;"></td></tr>
-      <tr><td class="caption">Revenue Per Product Category ($ million)</td></tr>
+      <tr><td class="caption">Revenue Per Product Category ($ millions)</td></tr>
     </table>
     <table class="image">
-      <tr><td><img src="http://i.imgur.com/ZmS0s23.png" title="Sales Per Product Cateogry" style="width:200px;height:150px;"></td></tr>
-      <tr><td class="caption">Sales Per Product Category (million)</td></tr>
+      <tr><td><img src="http://i.imgur.com/ZmS0s23.png" title="Sales Per Product Cateogry" style="width:250px;height:200px;"></td></tr>
+      <tr><td class="caption"># Sales Per Product Category (millions)</td></tr>
     </table>
-
+    </br>
+    <small> Data visualizations such as these are helpful in Step 1 </br>to get a high-level picture of shop performance by product category. </small>
   </article>
   <article>
     <h2 class="styled">Step 2: Build the Support Beams<br/>(Form Hypotheses to Test)</h2>
-    <p>Depending on the results from the first level of analysis above, begin to form some hypotheses to test further areas of investigation. As a place to start, consider: What might make a high-performing shop? What might make a 'good' seller? There are several different success metrics we can define. For Etsy sellers, success may be found in quantity of sales, revenue generated, and store ratings. For the Etsy marketplace itself, success may also be found in sellers' ability to bring in new customers (new customer aquisition) and connect them with the marketplace (traffic to other sellers' shops). Even though there are many ways to define performance success, this step is all about exploring relationships. As an analyst, I'm curious about the following questions: </p>
+    <p>Depending on the results from the first level of analysis above, begin to form some hypotheses to test further areas of investigation. As a place to start, consider: What might make a high-performing shop? What might make a 'good' seller? There are several different success metrics we can define. For Etsy sellers, success may be found in quantity of sales, revenue generated, and store ratings. For the Etsy marketplace itself, success may also be found in sellers' ability to bring in new Etsy customers (new customer aquisition) and connect them with the marketplace (traffic to other sellers' shops). Even though there are many ways to define performance success, this step is all about exploring relationships. As an analyst, I'm curious about the following: </p>
     <br/>
     <ul>
       <li>Do shops that sell a greater number of products tend to make more sales?</li>
@@ -141,11 +151,12 @@
       <li>The sellers that end up closing their shops – what are their views to sales ratios in the first month? Quarter? Year? Do these sellers tend to offer less products? Are there some behavior or sales patterns among these shops?</li>
     </ul>
     <br/>
-    <p> Whew! While this list is exhaustive, there are still tons more questions we could explore. I've tried to hone in on questions that might help shop owners better position their shops for success.  
+    <p> Whew! While this list is extensive, there are still tons more questions we could explore. I've tried to hone in on questions that might help shop owners better position their shops for success.  
   </article>
   <article>
     <h2 class="styled">Step 3: Use Our Tools (Test Our Hypotheses)</h2>
-    <p>To test these questions, let’s reach back into our toolbox to use some predictive modeling techniques. R is going to be extremely useful for this step – here’s a <a class="styled" href="https://cran.cnr.berkeley.edu/"> link </a> to download, it’s free!</p>
+    <img class="aligned" src="http://i.imgur.com/GUEovu1.jpg" style="width:200px;height:200px;">
+    <p>To test these questions, let’s reach back into our toolbox to use some predictive modeling techniques. R is going to be an extremely useful tool for this step – here’s a <a class="styled" href="https://cran.cnr.berkeley.edu/"> link </a> to download, it’s free!</p>
     <br/>
     <p> First we could run some simple linear regressions (single-variable). Our independent variable could be sales, and our dependent variable could be any number of measures – store lifetime, number of products sold, whether coupons are offered, etc. 
     Once we explore the statistically significant correlations between the variables above, we can dive deeper into building a predictive model for shop success.</p>
@@ -159,40 +170,50 @@
         <li>2015 Average views to sales ratio (vts_ratio)</li>
     </ul>
     <br/>
-    <p>Pretend that in the simple linear regressions above, we found correlations that are statistically significant (with a p value < 0.5) between sales and lifetime, sales and no_product, and sales and vts_ratio. We might want to run the following in R:</p>
+    <p>Pretend that in the simple linear regressions above, we found correlations that are statistically significant (with a p value <= 0.05) between sales and lifetime, sales and no_product, and sales and vts_ratio. We might want to run the following regression in R:</p>
     <br/>
-    <p>lm(sales ~ lifetime + no_prod + vts_ratio, shopdataset)</p>
+    <p class="equation">lm(sales ~ lifetime + no_prod + vts_ratio, shopdataset)</p>
     <br/>
-    <p>We are curious about the coefficients of the output equation:</p>
+    <p>We are curious about the coefficients (c1, c2, c3) of the output equation:</p>
     <br/>
-    <p>Sales = c1(lifetime) + c2(no_prod) + c3(vts_ratio) + a, where a is our y-intercept.</p>
-    <br/>
-    <p>For example, if we found that the value of c2 = 600, then we can say that for each increase in the number of products sold by a shop, there is an expected increase in yearly shop sales of $600.</p>
+    <p class="equation">sales = c1(lifetime) + c2(no_prod) + c3(vts_ratio) + a</p>
+    </br>
+    <p>where a is our y-intercept.</p>
+    </br>
+    <p>For example, if we found that the value of c2 = 600, then our model says that for each increase in the number of products sold by a shop, there is an expected increase in yearly shop sales of $600.</p>
   </article>
   <article>
-    <h2 class="styled">Step 4: Build our Shop Walls<br/>(Form Practical Strategies for Shop Owners)</h2>
+    <h2 class="styled">Step 4: Build our Walls (Form Practical Strategies)</h2>
+    <img src="http://i.imgur.com/0Voymaz.jpg" style="width:250px;height:200px;">
     <p>Here is where we build the walls and raise the roof of our awesome analysis!<p>
     <br/>
-    <p>This step allows us to translate our findings into practical knowledge for Etsy sellers, allowing them to improve their shops and strengthen the Etsy marketplace as a whole. The real question at the heart of this analysis is: How can we study the growth trajectory of the shops themselves to help new sellers through growing pains? How can we lead sellers to shop success? Below I’ve outlined three areas in which these findings might translate into practical solutions. <p/>
+    <p>This step allows us to translate our findings into practical knowledge for Etsy sellers, allowing them to improve their shops and strengthen the Etsy marketplace as a whole. The real question at the heart of this analysis is: How can we study the growth trajectory of the shops themselves to help new sellers through growing pains? Further, how can we lead sellers to shop success? Below I’ve outlined three areas in which these findings might translate into practical solutions. <p/>
     <ol>
-        <li>Strengthening all sellers: Can we somehow put these findings into a training guide for Etsy sellers?</li>
+        <li>Strengthening the performance of all sellers: Can we somehow put these findings into a training guide for Etsy sellers?</li><p>
             <ul>
-                <li>Say a major finding was that the more variety of products sold on a shop, the greater sales tends to be. Or that many of the sellers who ended up closing their shops generally had a lower number of reviews. We could strongly recommend to new sellers that they actively ask customers to write reviews, sell products from a variety of product categories. Etsy could hold webinars and training sessions around these findings. (make sure I reference existing ones, if there are any). </li>
+                <li>Say we discovered from our analysis that the more variety of product categories sold within a shop, the greater the sales of those products tends to be. Or that many of the sellers who end up closing their shops generally have a lower number of product reviews. We could strongly recommend to new sellers that they try to sell products from a vareity of product categories, as well as actively ask customers to write reviews. Etsy could hold webinars and training sessions around these findings and regularly engage sellers with "shop best practices" to help them navigate shop growth.</li>
             </ul>
         </li>
         <br/>
-        <li>Identifying and improving low-performing sellers: Could we build a predictive model with this data that might tell a seller how their shop is performing in real-time, and identify areas for improvement? </li>
+        <li>Identifying and improving low-performing sellers: Could we build a predictive model with this data that might tell a seller how their shop is performing in real-time, and identify areas for improvement? </li><p>
             <ul>
-                <li>Perhaps this is some sort of rating system from 0 to 100 (based on variables like store lifetime, number of products sold, site visits, favorites, feedback), where each seller gets a constantly-updating score that benchmarks them against top-performing sellers with similar lifetimes, product categories, and target customers. </li>
-                <li>The ratings system could also encourage sellers through difference growth stages and recommend strategies to maximize on opportunities for growth – during the first month, six-months, etc. </li>
-                <li>The rating system would only be visible to sellers could see on their profile page. (Insert Screen shot). </li>
+                <li>Perhaps this is some sort of rating system from 0 to 100 (based on variables like store lifetime, number of products sold, site visits, favorites, feedback), where each seller gets a score in real time that compares their shop's performance against top-performing shops with similar shop lifetimes, product categories, and target customers. </li>
+                <li>The ratings system could also encourage sellers in areas they are underperforming - say, for example, in site vistis - by providing targeted strategy recommendations to increase these numbers. The ratings systems could also help Etsy recommend strategies to lead sellers through different growth stages of their shops. </li>
+                <li>The rating system would only be visible to sellers on their "shop stats" page. </li>
             </ul>
         <br/>
         <li> Recognizing high-performing sellers: Could Etsy develop a rewards program for outstanding shop owners? To encourage/incentivize/highlight seller behavior that leads to success? </li></p>
+            <ul>
+                <li>Maybe this looks like membership into a special designated "Gold Star" seller group, one that invites sellers to special  webinars, trainings, or even conferences throughout the year. </li>
+                <li>Perhaps top-performing sellers could be featured on the Etsy blog, with their strategies highlighted so that other sellers can learn from their success. </li>
+            </ul>
   </article>
   <article>
       <h2 class="styled">Conclusion: Bringing Data to Design</h2>
-      <p>this data fundamentally informs the way Etsy designs its marketplace: setting shop owners up for success.</p>
-  <article>
-  <p> See more at datatodesign.wordpress.com</p>
+      <p>In this analysis, we recognize that studying Etsy sellers, their behavaiors, preferences, and the associated performance of their shops not only informs strategies that help sellers grow their shops, but also is critical to strengthening the Etsy marketplace as a whole. Without a strong seller base, the Etsy community won't be able to thrive. Using data insights to constantly inform and iterate the design of the Etsy marketplace will be essential to helping the Etsy seller and buyer community evolve and grow into the future.</p>
+      </br>
+      <p class="equation"> To see more data, design, and analysis (and cool visualizations!), visit <a class="styled" href="https://datatodesign.wordpress.com/"> datatodesign.wordpress.com!</a> 
+  </p>
+  </article>
 </body>
+
